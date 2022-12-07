@@ -5,12 +5,13 @@ import {
   Routes,
   Navigate,
 } from 'react-router-dom';
-import { NavLinks } from './components/heading/nav/NavLinks';
 
 import { Homepage } from './pages/homepage/Homepage';
 import { Blog } from './pages/Blog';
 import { LoadingSpinner } from './components/uielements/LoadingSpinner';
 import { ErrorPage } from './pages/ErrorPage';
+
+import iceberg from './assets/iceberg.png';
 
 export function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,8 +25,13 @@ export function App() {
   );
   return (
     <div className="App">
+      <img
+        src={iceberg}
+        alt="An iceberg symbolizing my portfolio and my ability"
+        className="absolute z-0"
+      />
       <Router>
-        <main>{isLoading ? <LoadingSpinner /> : routes}</main>
+        <main className="z-1">{isLoading ? <LoadingSpinner /> : routes}</main>
       </Router>
     </div>
   );
