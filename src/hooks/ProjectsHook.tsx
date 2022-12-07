@@ -13,7 +13,7 @@ export function ProjectsHook() {
       id: 1,
       name: `Restaurant Website`,
       tools: 'React/Routing, Firebase',
-      link: `https://not-a-restaurant.firebaseapp.com/`,
+      link: `https://restaurant-a24d7.web.app/`,
       description: `A simple SPA website for a fake restaurant, hosted on Firebase.`,
     },
     {
