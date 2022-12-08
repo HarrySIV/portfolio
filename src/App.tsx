@@ -24,14 +24,22 @@ export function App() {
     </Routes>
   );
   return (
-    <div className="App">
-      <img
+    <div className="relative">
+      {/* <img
         src={iceberg}
         alt="An iceberg symbolizing my portfolio and my ability"
-        className="absolute z-0"
-      />
+        className="z-0 w-1/2 absolute top-[75vh]"
+      /> */}
       <Router>
-        <main className="z-1">{isLoading ? <LoadingSpinner /> : routes}</main>
+        <main
+          className="z-10 absolute w-full bg-no-repeat bg-[center_top_60vh] "
+          style={{ backgroundImage: `url(${iceberg})` }}
+        >
+          {isLoading ? <LoadingSpinner /> : routes}
+          <h6 className="bg-black text-white text-center">
+            © 2022 Harry Sanders
+          </h6>
+        </main>
       </Router>
     </div>
   );

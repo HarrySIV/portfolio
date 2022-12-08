@@ -3,7 +3,7 @@ import { ProjectsCard } from './ProjectsCard';
 
 export function Projects() {
   return (
-    <section>
+    <section className="max-w-screen-2xl flex justify-evenly flex-wrap">
       <ProjectsCard />
     </section>
   );

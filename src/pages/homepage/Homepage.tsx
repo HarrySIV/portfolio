@@ -8,8 +8,10 @@ export function Homepage() {
     <>
       <Title />
       <hr />
-      <NavLinks />
-      <Projects />
+      <div className="bg-gradient-to-t from-black/95 to-[#22c5f259]/50">
+        {/* <NavLinks /> */}
+        <Projects />
+      </div>
     </>
   );
 }
