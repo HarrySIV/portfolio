@@ -7,7 +7,7 @@ export function ProjectsCard() {
     <>
       {projects.map((project) => (
         <a
-          className="w-40 min-w-[150px] overflow-hidden bg-white m-4 p-4 rounded text-center"
+          className="w-2/3 min-w-[150px] overflow-hidden bg-white m-4 p-4 rounded text-center"
           href={project.link}
         >
           <div className="h-16 p-4">

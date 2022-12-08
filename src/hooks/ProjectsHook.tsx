@@ -4,17 +4,17 @@ export function ProjectsHook() {
   const [projects, setProjects] = useState([
     {
       id: 0,
-      name: `MERN Todo`,
-      tools: 'MERN, Heroku, Firebase',
-      link: `https://todo-a8948.web.app/`,
-      description: `A Todo app built using the MERN stack, hosted on heroku and firebase.`,
-    },
-    {
-      id: 1,
       name: `Restaurant Website`,
       tools: 'React/Routing, Firebase',
       link: `https://restaurant-a24d7.web.app/`,
       description: `A simple SPA website for a fake restaurant, hosted on Firebase.`,
+    },
+    {
+      id: 1,
+      name: `MERN Todo`,
+      tools: 'MERN, Heroku, Firebase',
+      link: `https://todo-a8948.web.app/`,
+      description: `A Todo app built using the MERN stack, hosted on heroku and firebase.`,
     },
     {
       id: 2,
@@ -25,27 +25,13 @@ export function ProjectsHook() {
     },
     {
       id: 3,
-      name: `Star Wars Ships`,
-      tools: 'React, Axios',
-      link: `https://harrysiv.github.io/swships/`,
-      description: `An application that fetches Star Wars ship info and displays it.`,
-    },
-    {
-      id: 4,
       name: `Students`,
       tools: 'React, Axios',
       link: `https://harrysiv.github.io/fetchstudents-app/`,
       description: `An application that fetches a list of students and displays them.`,
     },
     {
-      id: 5,
-      name: `Jokes`,
-      tools: 'Javascript, Axios',
-      link: `https://harrysiv.github.io/jokes/`,
-      description: `An app that fetches a random joke and displays it.`,
-    },
-    {
-      id: 6,
+      id: 4,
       name: `D&D`,
       tools: 'Javascript',
       link: `https://harrysiv.github.io/Dndjs/`,
