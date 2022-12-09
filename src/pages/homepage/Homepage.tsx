@@ -7,7 +7,7 @@ export function Homepage() {
     <>
       <Title />
       <hr />
-      <div className="bg-gradient-to-t from-black/95 to-[#22c5f259]/50">
+      <div className="bg-gradient-to-t from-black/95 to-[#22c5f259]/50 font-['Mate']">
         {/* <NavLinks /> */}
         <Projects />
       </div>
