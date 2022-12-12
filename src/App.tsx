@@ -25,7 +25,7 @@ export function App() {
     <div className="relative">
       <Router>
         <main
-          className="z-10 absolute w-full bg-no-repeat bg-[center_top_60vh] "
+          className="z-10 absolute w-full bg-no-repeat bg-[center_top_60vh]"
           style={{
             backgroundImage: `url(/assets/iceberg.png)`,
           }}
