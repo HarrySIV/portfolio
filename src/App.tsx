@@ -11,8 +11,6 @@ import { Blog } from './pages/Blog';
 import { LoadingSpinner } from './components/uielements/LoadingSpinner';
 import { ErrorPage } from './pages/ErrorPage';
 
-import iceberg from '../public/assets/iceberg.png';
-
 export function App() {
   const [isLoading, setIsLoading] = useState(false);
   const routes = (
@@ -29,7 +27,7 @@ export function App() {
         <main
           className="z-10 absolute w-full bg-no-repeat bg-[center_top_60vh] "
           style={{
-            backgroundImage: process.env.PUBLIC_URL + '/assets/iceberg.png',
+            backgroundImage: `url(/assets/iceberg.png)`,
           }}
         >
           {isLoading ? <LoadingSpinner /> : routes}

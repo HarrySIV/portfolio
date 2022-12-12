@@ -24,7 +24,7 @@ export function ProjectsHook() {
       tools: 'React',
       link: `https://harrysiv.github.io/expenses-chart/`,
       description: `A small application for users to input and track their expenses year by year.`,
-      image: '../../../assets/projects/students.png',
+      image: '/assets/projects/expenses.jpg',
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ export function ProjectsHook() {
       tools: 'React, Axios',
       link: `https://harrysiv.github.io/fetchstudents-app/`,
       description: `An application that fetches a list of students and displays them.`,
-      image: '../../../assets/projects/students.png',
+      image: '/assets/projects/students.jpg',
     },
     {
       id: 4,
