@@ -11,7 +11,7 @@ import { Blog } from './pages/Blog';
 import { LoadingSpinner } from './components/uielements/LoadingSpinner';
 import { ErrorPage } from './pages/ErrorPage';
 
-import iceberg from './assets/iceberg.png';
+import iceberg from '../public/assets/iceberg.png';
 
 export function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,15 +25,12 @@ export function App() {
   );
   return (
     <div className="relative">
-      {/* <img
-        src={iceberg}
-        alt="An iceberg symbolizing my portfolio and my ability"
-        className="z-0 w-1/2 absolute top-[75vh]"
-      /> */}
       <Router>
         <main
           className="z-10 absolute w-full bg-no-repeat bg-[center_top_60vh] "
-          style={{ backgroundImage: `url(${iceberg})` }}
+          style={{
+            backgroundImage: process.env.PUBLIC_URL + '/assets/iceberg.png',
+          }}
         >
           {isLoading ? <LoadingSpinner /> : routes}
           <h6 className="bg-black text-white text-center">
