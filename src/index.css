@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Mate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+
 .project-link {
   @apply h-[200px] w-2/3 min-w-[150px] max-w-[750px] overflow-hidden bg-white m-4 p-4 rounded text-center shadow-2xl relative flex justify-center bg-no-repeat bg-cover;
 }
