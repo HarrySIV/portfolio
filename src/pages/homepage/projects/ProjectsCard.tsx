@@ -39,7 +39,7 @@ export function ProjectsCard() {
                     {project.name}
                   </h2>
                 ) : (
-                  <h6 className="m-0 p-4 md:text-xl lg:text-2xl xl:text-3xl">
+                  <h6 className="m-0 p-4 w-[30vw] text-xs md:text-xl lg:text-2xl xl:text-3xl">
                     {project.description}
                   </h6>
                 )}
@@ -63,7 +63,7 @@ export function ProjectsCard() {
                         ? 'bg-red-700'
                         : tool === 'TypeScript'
                         ? 'bg-blue-700'
-                        : ''
+                        : 'bg-white'
                     } p-2 rounded-3xl text-white mx-4 border-2 border-solid border-stone-800`}
                   >
                     {tool}
