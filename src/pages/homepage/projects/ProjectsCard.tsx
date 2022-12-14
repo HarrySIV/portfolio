@@ -25,14 +25,14 @@ export function ProjectsCard() {
           }}
         >
           <button
-            className="z-20 text-4xl"
+            className="z-20 text-xl md:text-2xl lg:text-4xl"
             onClick={clickHandler}
             disabled={!showAlt}
           >
             <FontAwesomeIcon icon={faSquareCaretLeft} />
           </button>
-          <a className="flex flex-col" href={project.link}>
-            <div className="z-10 bg-opacity-0 text-black flex items-center">
+          <a className="w-0 flex flex-col" href={project.link}>
+            <div className="z-10 m-0 flex items-center justify-evenly">
               <div className="px-4 m-8 bg-white/80">
                 {!showAlt ? (
                   <h2 className="m-0 p-4 whitespace-nowrap md:text-3xl lg:text-5xl xl:text-7xl">
@@ -45,10 +45,35 @@ export function ProjectsCard() {
                 )}
               </div>
             </div>
-            <h5>{project.tools}</h5>
+            <div className="p-1 rounded-lg flex justify-around">
+              {project.tools.map((tool) => {
+                return (
+                  <h5
+                    key={tool}
+                    className={`${
+                      tool === 'React'
+                        ? 'bg-blue-300'
+                        : tool === 'Express'
+                        ? 'bg-green-600'
+                        : tool === 'JavaScript'
+                        ? 'bg-yellow-300'
+                        : tool === 'MongoDB'
+                        ? 'bg-green-800'
+                        : tool === 'API'
+                        ? 'bg-red-700'
+                        : tool === 'TypeScript'
+                        ? 'bg-blue-700'
+                        : ''
+                    } p-2 rounded-3xl text-white mx-4 border-2 border-solid border-stone-800`}
+                  >
+                    {tool}
+                  </h5>
+                );
+              })}
+            </div>
           </a>
           <button
-            className="z-20 text-4xl"
+            className="z-20 text-xl md:text-2xl lg:text-4xl"
             onClick={clickHandler}
             disabled={showAlt}
           >
