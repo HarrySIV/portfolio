@@ -17,38 +17,41 @@ export function ProjectsCard() {
   return (
     <>
       {projects.map((project) => (
-        <a
-          key={project.id}
-          className="project-link"
-          style={{
-            backgroundImage: project.image ? `url(${project.image})` : 'none',
-          }}
-          href={project.link}
-        >
-          <div className="z-10 bg-opacity-0 flex items-center">
-            {!showAlt ? (
-              <button
-                className="z-20 border-black bg-white"
-                onClick={clickHandler}
-              >
-                <FontAwesomeIcon icon={faSquareCaretLeft} />
-              </button>
-            ) : null}
-            <h2 className="m-0 p-4 text-[6vw] md:text-6xl text-black bg-white/80">
-              {project.name}
-            </h2>
-            {!showAlt ? (
-              <button
-                className="z-20 border-black bg-white"
-                onClick={clickHandler}
-              >
-                <FontAwesomeIcon icon={faSquareCaretRight} />
-              </button>
-            ) : null}
-          </div>
-          <h6 id={`${project.id}`}>{project.description}</h6>
-          <h5>{project.tools}</h5>
-        </a>
+        <div className="relative">
+          <button
+            className="z-20 absolute left-0"
+            onClick={clickHandler}
+            disabled={!showAlt}
+          >
+            <FontAwesomeIcon icon={faSquareCaretLeft} />
+          </button>
+          <button
+            className="z-20 absolute right-0"
+            onClick={clickHandler}
+            disabled={showAlt}
+          >
+            <FontAwesomeIcon icon={faSquareCaretRight} />
+          </button>
+          <a
+            key={project.id}
+            className="project-link"
+            style={{
+              backgroundImage: project.image ? `url(${project.image})` : 'none',
+            }}
+            href={project.link}
+          >
+            <div className="z-10 pt-8 w-[100vw] bg-opacity-0 text-black flex flex-row items-center">
+              <div className="px-4 m-8 w-[50vw] bg-white/80 flex items-center justify-between">
+                {!showAlt ? (
+                  <h2 className="m-0 p-4 whitespace-nowrap">{project.name}</h2>
+                ) : (
+                  <h6>{project.description}</h6>
+                )}
+              </div>
+            </div>
+            <h5>{project.tools}</h5>
+          </a>
+        </div>
       ))}
     </>
   );
