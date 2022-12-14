@@ -17,40 +17,43 @@ export function ProjectsCard() {
   return (
     <>
       {projects.map((project) => (
-        <div className="relative">
+        <div
+          className="project-link"
+          key={project.id}
+          style={{
+            backgroundImage: project.image ? `url(${project.image})` : 'none',
+          }}
+        >
           <button
-            className="z-20 absolute left-0"
+            className="z-20 text-4xl"
             onClick={clickHandler}
             disabled={!showAlt}
           >
             <FontAwesomeIcon icon={faSquareCaretLeft} />
           </button>
-          <button
-            className="z-20 absolute right-0"
-            onClick={clickHandler}
-            disabled={showAlt}
-          >
-            <FontAwesomeIcon icon={faSquareCaretRight} />
-          </button>
-          <a
-            key={project.id}
-            className="project-link"
-            style={{
-              backgroundImage: project.image ? `url(${project.image})` : 'none',
-            }}
-            href={project.link}
-          >
-            <div className="z-10 pt-8 w-[100vw] bg-opacity-0 text-black flex flex-row items-center">
-              <div className="px-4 m-8 w-[50vw] bg-white/80 flex items-center justify-between">
+          <a className="flex flex-col" href={project.link}>
+            <div className="z-10 bg-opacity-0 text-black flex items-center">
+              <div className="px-4 m-8 bg-white/80">
                 {!showAlt ? (
-                  <h2 className="m-0 p-4 whitespace-nowrap">{project.name}</h2>
+                  <h2 className="m-0 p-4 whitespace-nowrap md:text-3xl lg:text-5xl xl:text-7xl">
+                    {project.name}
+                  </h2>
                 ) : (
-                  <h6>{project.description}</h6>
+                  <h6 className="m-0 p-4 md:text-xl lg:text-2xl xl:text-3xl">
+                    {project.description}
+                  </h6>
                 )}
               </div>
             </div>
             <h5>{project.tools}</h5>
           </a>
+          <button
+            className="z-20 text-4xl"
+            onClick={clickHandler}
+            disabled={showAlt}
+          >
+            <FontAwesomeIcon icon={faSquareCaretRight} />
+          </button>
         </div>
       ))}
     </>
