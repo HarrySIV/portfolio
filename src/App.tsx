@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Route,
   BrowserRouter as Router,
@@ -8,11 +8,9 @@ import {
 
 import { Homepage } from './pages/homepage/Homepage';
 import { Blog } from './pages/Blog';
-import { LoadingSpinner } from './components/uielements/LoadingSpinner';
 import { ErrorPage } from './pages/ErrorPage';
 
 export function App() {
-  const [isLoading, setIsLoading] = useState(false);
   const routes = (
     <Routes>
       <Route path="/" element={<Homepage />} />
@@ -30,7 +28,7 @@ export function App() {
             backgroundImage: `url(/assets/iceberg.png)`,
           }}
         >
-          {isLoading ? <LoadingSpinner /> : routes}
+          {routes}
           <h6 className="bg-black text-white text-center">
             © 2022 Harry Sanders
           </h6>

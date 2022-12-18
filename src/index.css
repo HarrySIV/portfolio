@@ -8,3 +8,7 @@
 .project-link {
   @apply h-[30vw] w-3/5 min-w-[425px] max-w-[1000px] min-h-[250px] max-h-[450px] m-4 p-4 shadow-2xl flex justify-between items-center text-center bg-cover;
 }
+
+.input {
+  @apply w-64 text-black;
+}
