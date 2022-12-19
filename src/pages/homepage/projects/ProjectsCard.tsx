@@ -6,14 +6,24 @@ import {
   faSquareCaretLeft,
   faSquareCaretRight,
 } from '@fortawesome/free-solid-svg-icons';
+import { Project } from '../../../hooks/ProjectsHook';
 
 export function ProjectsCard() {
-  const [showAlt, setShowAlt] = useState(false);
+  const [altArr, setAltArr] = useState<string[]>([]);
   const { projects } = ProjectsHook();
 
-  const clickHandler = () => {
-    setShowAlt(!showAlt);
+  const showTitleHandler = (project: Project) => {
+    const newAltArr = altArr.filter((alt) => alt !== project.name);
+    setAltArr(newAltArr);
   };
+
+  const showAltHandler = (project: Project) => {
+    const newArr = altArr.filter((alt) => alt === project.name);
+    console.log(newArr);
+    const newAltArr = [...altArr, project.name];
+    setAltArr(newAltArr);
+  };
+
   return (
     <>
       {projects.map((project) => (
@@ -25,16 +35,24 @@ export function ProjectsCard() {
           }}
         >
           <button
-            className="z-20 text-xl md:text-2xl lg:text-4xl"
-            onClick={clickHandler}
-            disabled={!showAlt}
+            className={`z-20 text-xl md:text-2xl lg:text-4xl ${
+              altArr.filter((alt) => alt === project.name).length === 0
+                ? 'text-gray-400'
+                : 'text-black'
+            }`}
+            onClick={() => showTitleHandler(project)}
+            disabled={
+              altArr.filter((alt) => alt === project.name).length !== 0
+                ? false
+                : true
+            }
           >
             <FontAwesomeIcon icon={faSquareCaretLeft} />
           </button>
           <a className="w-0 flex flex-col" href={project.link}>
             <div className="z-10 m-0 flex items-center justify-evenly">
               <div className="px-4 m-8 bg-white/80">
-                {!showAlt ? (
+                {altArr.filter((alt) => alt === project.name).length === 0 ? (
                   <h2 className="m-0 p-4 whitespace-nowrap md:text-3xl lg:text-5xl xl:text-7xl">
                     {project.name}
                   </h2>
@@ -73,9 +91,17 @@ export function ProjectsCard() {
             </div>
           </a>
           <button
-            className="z-20 text-xl md:text-2xl lg:text-4xl"
-            onClick={clickHandler}
-            disabled={showAlt}
+            className={`z-20 text-xl md:text-2xl lg:text-4xl ${
+              altArr.filter((alt) => alt === project.name).length !== 0
+                ? 'text-gray-400'
+                : 'text-black'
+            }`}
+            onClick={() => showAltHandler(project)}
+            disabled={
+              altArr.filter((alt) => alt === project.name).length !== 0
+                ? true
+                : false
+            }
           >
             <FontAwesomeIcon icon={faSquareCaretRight} />
           </button>

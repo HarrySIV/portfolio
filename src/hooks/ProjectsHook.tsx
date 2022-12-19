@@ -1,7 +1,16 @@
 import { useState } from 'react';
 
+export interface Project {
+  id: number;
+  name: string;
+  tools: string[];
+  link: string;
+  description: string;
+  image: string;
+}
+
 export function ProjectsHook() {
-  const [projects, setProjects] = useState([
+  const [projects, setProjects] = useState<Project[]>([
     {
       id: 0,
       name: `Restaurant Website`,
