@@ -18,8 +18,6 @@ export function ProjectsCard() {
   };
 
   const showAltHandler = (project: Project) => {
-    const newArr = altArr.filter((alt) => alt === project.name);
-    console.log(newArr);
     const newAltArr = [...altArr, project.name];
     setAltArr(newAltArr);
   };
