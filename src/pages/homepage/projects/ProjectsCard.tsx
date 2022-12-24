@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { ProjectsHook } from '../../../hooks/ProjectsHook';
+import { useProjects } from '../../../hooks/useProjects';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSquareCaretLeft,
   faSquareCaretRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { Project } from '../../../hooks/ProjectsHook';
+import { Project } from '../../../hooks/useProjects';
 
 export function ProjectsCard() {
   const [altArr, setAltArr] = useState<string[]>([]);
-  const { projects } = ProjectsHook();
+  const { projects } = useProjects();
 
   const showTitleHandler = (project: Project) => {
     const newAltArr = altArr.filter((alt) => alt !== project.name);

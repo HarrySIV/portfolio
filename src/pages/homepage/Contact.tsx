@@ -27,7 +27,7 @@ export function Contact() {
   };
 
   return (
-    <div className="bg-black text-white">
+    <div className="dark:bg-black dark:text-white">
       <form
         ref={form}
         onSubmit={sendEmail}

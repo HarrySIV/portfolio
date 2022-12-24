@@ -9,7 +9,7 @@ export interface Project {
   image: string;
 }
 
-export function ProjectsHook() {
+export function useProjects() {
   const [projects, setProjects] = useState<Project[]>([
     {
       id: 0,
