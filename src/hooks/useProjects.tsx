@@ -17,7 +17,7 @@ export function useProjects() {
       tools: ['React', 'Express', 'MongoDB', 'TypeScript'],
       link: `https://restaurant-a24d7.web.app/`,
       description: `A simple SPA website for a fake restaurant, hosted on Firebase.`,
-      image: '',
+      image: '/assets/projects/restaurant.jpg',
     },
     {
       id: 1,
